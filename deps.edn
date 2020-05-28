@@ -1,0 +1,14 @@
+{:paths ["src" "resources"]
+
+ :deps
+ {com.cognitect/transit-cljs {:mvn/version "0.8.264"}
+  lambdaisland/glogi         {:mvn/version "1.0.63"}}
+
+ :aliases
+ {:dev
+  {:extra-paths ["dev"]
+   :extra-deps  {thheller/shadow-cljs {:mvn/version "2.9.9"}}}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.632"}}}}}
