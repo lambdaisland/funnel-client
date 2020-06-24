@@ -83,7 +83,7 @@
   (.open ws url))
 
 (defn open! [^goog.net.WebSocket ws url]
-  (ensure-websocket #(open! ws url)))
+  (ensure-websocket #(open!* ws url)))
 
 (defn connect!
   ([url handler-map]

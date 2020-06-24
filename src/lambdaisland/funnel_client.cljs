@@ -2,7 +2,9 @@
   (:require [cognitect.transit :as transit]
             [clojure.string :as str]
             [lambdaisland.funnel-client.websocket :as websocket]
-            [lambdaisland.glogi :as log]))
+            [lambdaisland.glogi :as log]
+            [goog.object :as gobj])
+  (:import [goog.net WebSocket]))
 
 (defprotocol Socket
   (send [socket message]))
@@ -21,36 +23,38 @@
          on-error identity
          on-close identity
          transit-reader (transit/reader :json)
-         transit-writer (transit/write :json)}}]
+         transit-writer (transit/writer :json)}}]
   (log/info :connecting uri)
-  (let [ws (websocket/connect!
-            uri
-            {:open
-             (fn [e]
-               (log/debug :websocket/open (into {} (map (juxt keyword #(gobj/get e %))) (js/Object.keys e)))
-               (on-open e))
+  (let [ws (websocket/ensure-websocket #(goog.net.WebSocket. true))]
+    (websocket/register-handlers ws
+                                 {:open
+                                  (fn [e]
+                                    (log/debug :websocket/open (into {} (map (juxt keyword #(gobj/get e %))) (js/Object.keys e)))
+                                    (on-open ws e))
 
-             :error
-             (fn [e]
-               (log/warn :websocket/error {:callback :onerror :event e})
-               (on-error e))
+                                  :error
+                                  (fn [e]
+                                    (log/warn :websocket/error {:callback :onerror :event e})
+                                    (on-error ws e))
 
-             :message
-             (fn [e]
-               (let [msg (transit/read transit-reader (websocket/message-data e))]
-                 (log/finest :websocket/message msg)
-                 (on-message msg)))
+                                  :message
+                                  (fn [e]
+                                    (let [msg (transit/read transit-reader (websocket/message-data e))]
+                                      (log/finest :websocket/message msg)
+                                      (on-message ws msg)))
 
-             :close
-             (fn [e]
-               (log/info :websocket/close {:callback :onclose :event e})
-               (on-close e))})]
+                                  :close
+                                  (fn [e]
+                                    (log/info :websocket/close {:callback :onclose :event e})
+                                    (on-close ws e))})
     (specify! ws
       Socket
       (send [socket message]
         (assert (websocket/open? socket))
         (log/debug :websocket/send message)
-        (websocket/send! socket (transit/write transit-writer message))))))
+        (websocket/send! socket (transit/write transit-writer message))))
+    (websocket/open! ws uri)
+    ws))
 
 (defn disconnect! [socket]
   (when socket

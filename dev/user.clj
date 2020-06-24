@@ -16,4 +16,4 @@
    ((jit shadow.cljs.devtools.api/nrepl-select) build-id)))
 
 (defn browse []
-  ((jit clojure.java.browse/browse-url) "http://localhost:8000"))
+  ((jit clojure.java.browse/browse-url) "http://localhost:8001"))

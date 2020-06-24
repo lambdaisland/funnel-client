@@ -2,12 +2,13 @@
  {:aliases [:dev]}
 
  :dev-http
- {8000 "classpath:public"}
+ {8001 "classpath:public"}
 
  :builds
  {:main
   {:target     :browser
-   :modules    {:main {:entries [lambdaisland.funnel-client]}}
+   :modules    {:main {:entries [lambdaisland.funnel-client.examples.reload]}}
    :output-dir "resources/public/ui"
    :asset-path "/ui"
-   :devtools   {:repl-pprint true}}}}
+   :devtools   {:repl-pprint true}
+   :closure-defines {goog.debug.LOGGING_ENABLED true}}}}
