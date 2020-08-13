@@ -21,7 +21,10 @@
 
 (def host-env
   (cond
-    (not (nil? goog/nodeGlobalRequire)) :node
+    (this-as this
+      (identical? this
+                  (when (exists? js/global)
+                    js/global))) :node
     (not (nil? goog/global.document)) :html
     (and (exists? goog/global.navigator)
          (= goog/global.navigator.product "ReactNative"))
@@ -30,7 +33,9 @@
      (nil? goog/global.document)
      (exists? js/self)
      (exists? (.-importScripts js/self)))
-    :worker))
+    :worker
+    :else
+    (throw (js/Error. (str `host-env ": Can't detect host env")))))
 
 (def event-types
   {;; OPENED Fired when the WebSocket connection has been established.
@@ -57,12 +62,13 @@
 (defn ensure-websocket [thunk]
   (if (gobj/get goog.global "WebSocket")
     (thunk)
-    (when-let [websocket-class (get-websocket-class)]
+    (if-let [websocket-class (get-websocket-class)]
       (do
         (gobj/set goog.global "WebSocket" websocket-class)
         (let [result (thunk)]
           (gobj/set goog.global "WebSocket" nil)
-          result)))))
+          result))
+      (throw (js/Error. (str `ensure-websocket ": no websocket class found"))))))
 
 (defn make-websocket ^goog.net.WebSocket
   ([]
