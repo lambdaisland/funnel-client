@@ -4,7 +4,7 @@
 [![CircleCI](https://circleci.com/gh/lambdaisland/funnel-client.svg?style=svg)](https://circleci.com/gh/lambdaisland/funnel-client) [![cljdoc badge](https://cljdoc.org/badge/lambdaisland/funnel-client)](https://cljdoc.org/d/lambdaisland/funnel-client) [![Clojars Project](https://img.shields.io/clojars/v/lambdaisland/funnel-client.svg)](https://clojars.org/lambdaisland/funnel-client)
 <!-- /badges -->
 
-Clojure and ClojureScript client libraries for Funnel
+Clojure and ClojureScript client libraries for [Funnel](https://github.com/lambdaisland/funnel)
 
 <!-- opencollective -->
 
@@ -28,8 +28,6 @@ so that we may continue to enjoy a thriving Clojure ecosystem.
 
 <!-- /opencollective -->
 
-## Features
-
 <!-- installation -->
 ## Installation
 deps.edn
@@ -47,7 +45,41 @@ project.clj
 
 ## Rationale
 
+To use Funnel all you need is a websocket connection and a way to read and write
+Transit. As such we originally envisaged people would use their websocket
+connection of choice to connect to Funnel directly.
+
+To reduce the boilerplate that people have to write, and to encode some best
+practice patterns, we decided to make these clients available. There's a Clojure
+and a ClojureScript client, which both implement the same high level API, to the
+extent possible, providing that they sit upon very different websocket
+implementations and platforms.
+
 ## Usage
+
+At it simplest all you need is:
+
+``` clojure
+
+(require '[lambdaisland.funnel-client :as funnel-client])
+
+(def conn (funnel-client/connect {:on-message prn}))
+
+;; query funnel to get the whoami map of every connected client
+(funnel-client/send conn {:funnel/query true})
+```
+
+See the [Funnel README](https://github.com/lambdaisland/funnel) to understand
+how to use the Funnel protocol.
+
+`connect` takes the following options
+
+- `:uri` defaults to `ws://localhost:44220`, or if using the ClojureScript client and the current origin is https, then it will use `wss` (SSL)
+- `:on-open` / `:on-error` / `:on-close` / `:on-message` callbacks, these all take two arguments, the connection itself, and a handshake/error/message
+- `:whoami` map or atom containing the Funnel whoami map. If omitted will use the `funnel-client/whoami` global atom.
+
+If using an atom as a `:whoami` then changing the contents of the atom will
+automatically re-announce the identifying information to Funnel.
 
 <!-- contributing -->
 ## Contributing

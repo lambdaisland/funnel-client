@@ -68,7 +68,8 @@
                                             :funnel/whoami new-whoami}))))
                  (on-open this handshake))
                (onError [ex]
-                 (log/warn :websocket/error true :exception ex))
+                 (log/warn :websocket/error true :exception ex)
+                 (on-error this ex))
                (onMessage [raw-message]
                  (let [message (from-transit raw-message)]
                    (log/trace :websocket/message message)
