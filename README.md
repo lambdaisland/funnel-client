@@ -9,7 +9,7 @@ Clojure and ClojureScript client libraries for Funnel
 <!-- opencollective -->
 ## Support Lambda Island Open Source
 
-<img align="left" width="100" height="100" src="https://github.com/lambdaisland/open-source/raw/master/artwork/lighthouse_readme.png">
+<img align="left" src="https://github.com/lambdaisland/open-source/raw/master/artwork/lighthouse_readme.png">
 
 funnel-client is part of a growing collection of quality Clojure libraries and
 tools released on the Lambda Island label. If you find value in our work please
