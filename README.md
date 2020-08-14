@@ -81,6 +81,21 @@ how to use the Funnel protocol.
 If using an atom as a `:whoami` then changing the contents of the atom will
 automatically re-announce the identifying information to Funnel.
 
+### Exclusions
+
+If you only use one of the two clients, you may want to exclude the dependencies needed for the other client.
+
+For ClojureScript we pull in
+
+- `com.cognitect/transit-cljs`
+- `lambdaisland/glogi`
+
+On Clojure we make use of
+
+- `io.pedestal/pedestal.log`
+- `org.java-websocket/Java-WebSocket`
+- `com.cognitect/transit-clj`
+
 <!-- contributing -->
 ## Contributing
 
