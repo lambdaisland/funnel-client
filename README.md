@@ -33,13 +33,13 @@ so that we may continue to enjoy a thriving Clojure ecosystem.
 deps.edn
 
 ```
-lambdaisland/funnel-client {:mvn/version "0.0.0"}
+lambdaisland/funnel-client {:mvn/version "0.0.9"}
 ```
 
 project.clj
 
 ```
-[lambdaisland/funnel-client "0.0.0"]
+[lambdaisland/funnel-client "0.0.9"]
 ```
 <!-- /installation -->
 
