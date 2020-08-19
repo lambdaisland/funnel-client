@@ -3,7 +3,7 @@
  :deps
  {;; cljs
   com.cognitect/transit-cljs        {:mvn/version "0.8.264"}
-  lambdaisland/glogi                {:mvn/version "1.0.63"}
+  lambdaisland/glogi                {:mvn/version "1.0.70"}
 
   ;; clj
   io.pedestal/pedestal.log          {:mvn/version "0.5.8"}

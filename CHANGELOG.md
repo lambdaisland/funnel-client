@@ -1,15 +1,11 @@
 # Unreleased
 
-## Added
-
-## Fixed
-
 ## Changed
+
+- Bump lambdaisland.glogi to 1.0.70
 
 # 0.0.9 (2020-08-17 / 445658b)
 
 ## Added
 
-## Fixed
-
-## Changed
+Initial release of `lambdaisland.funnel-client`, clj and cljs version.
