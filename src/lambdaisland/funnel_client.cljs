@@ -1,4 +1,4 @@
-(ns lambdaisland.funnel-client
+(ns lambdaisland.funnel-client ;; cljs
   (:require [clojure.string :as str]
             [cognitect.transit :as transit]
             [goog.object :as gobj]

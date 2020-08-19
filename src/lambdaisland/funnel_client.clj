@@ -1,4 +1,4 @@
-(ns lambdaisland.funnel-client
+(ns lambdaisland.funnel-client ;; clj
   (:refer-clojure :exclude [send])
   (:require [cognitect.transit :as transit]
             [io.pedestal.log :as log]
