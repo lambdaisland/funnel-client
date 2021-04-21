@@ -1,10 +1,8 @@
 # Unreleased
 
-## Added
-
-## Fixed
-
 ## Changed
+
+- Bump lambdaisland.glogi to 1.0.106
 
 # 0.0.13 (2020-08-19 / 0eb52ad)
 
