@@ -1,45 +1,44 @@
 # funnel-client
 
 <!-- badges -->
-[![CircleCI](https://circleci.com/gh/lambdaisland/funnel-client.svg?style=svg)](https://circleci.com/gh/lambdaisland/funnel-client) [![cljdoc badge](https://cljdoc.org/badge/lambdaisland/funnel-client)](https://cljdoc.org/d/lambdaisland/funnel-client) [![Clojars Project](https://img.shields.io/clojars/v/lambdaisland/funnel-client.svg)](https://clojars.org/lambdaisland/funnel-client)
+[![cljdoc badge](https://cljdoc.org/badge/com.lambdaisland/funnel-client)](https://cljdoc.org/d/com.lambdaisland/funnel-client) [![Clojars Project](https://img.shields.io/clojars/v/com.lambdaisland/funnel-client.svg)](https://clojars.org/com.lambdaisland/funnel-client)
 <!-- /badges -->
 
 Clojure and ClojureScript client libraries for [Funnel](https://github.com/lambdaisland/funnel)
 
 <!-- opencollective -->
-
-&nbsp;
+## Lambda Island Open Source
 
 <img align="left" src="https://github.com/lambdaisland/open-source/raw/master/artwork/lighthouse_readme.png">
 
 &nbsp;
 
-## Support Lambda Island Open Source
+funnel-client is part of a growing collection of quality Clojure libraries created and maintained
+by the fine folks at [Gaiwan](https://gaiwan.co).
 
-funnel-client is part of a growing collection of quality Clojure libraries and
-tools released on the Lambda Island label. If you are using this project
-commercially then you are expected to pay it forward by
-[becoming a backer on Open Collective](http://opencollective.com/lambda-island#section-contribute),
+Pay it forward by [becoming a backer on our Open Collective](http://opencollective.com/lambda-island),
 so that we may continue to enjoy a thriving Clojure ecosystem.
 
-&nbsp;
+You can find an overview of our projects at [lambdaisland/open-source](https://github.com/lambdaisland/open-source).
 
 &nbsp;
 
+&nbsp;
 <!-- /opencollective -->
 
 <!-- installation -->
 ## Installation
-deps.edn
+
+To use the latest release, add the following to your `deps.edn` ([Clojure CLI](https://clojure.org/guides/deps_and_cli))
 
 ```
-lambdaisland/funnel-client {:mvn/version "0.0.13"}
+com.lambdaisland/funnel-client {:mvn/version "0.0.18"}
 ```
 
-project.clj
+or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
 
 ```
-[lambdaisland/funnel-client "0.0.13"]
+[com.lambdaisland/funnel-client "0.0.18"]
 ```
 <!-- /installation -->
 
@@ -131,7 +130,7 @@ changes are justified.
 <!-- license -->
 ## License
 
-Copyright &copy; 2020 Arne Brasseur and Contributors
+Copyright &copy; 2020-2021 Arne Brasseur and Contributors
 
 Licensed under the term of the Mozilla Public License 2.0, see LICENSE.
 <!-- /license -->
