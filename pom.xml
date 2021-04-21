@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>lambdaisland</groupId>
+  <groupId>com.lambdaisland</groupId>
   <artifactId>funnel-client</artifactId>
-  <version>0.0.13</version>
+  <version>0.0.18</version>
   <name>funnel-client</name>
   <description>Clojure and ClojureScript client libraries for Funnel</description>
   <url>https://github.com/lambdaisland/funnel-client</url>
@@ -22,33 +22,33 @@
     <url>https://github.com/lambdaisland/funnel-client</url>
     <connection>scm:git:git://github.com/lambdaisland/funnel-client.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/lambdaisland/funnel-client.git</developerConnection>
-    <tag>bf38ee79249111b462f0e4d7a6aa4060fe25f542</tag>
+    <tag>7e790eca6d73426ecd4278c9ad17826c8ce32a05</tag>
   </scm>
   <dependencies>
-    <dependency>
-      <groupId>io.pedestal</groupId>
-      <artifactId>pedestal.log</artifactId>
-      <version>0.5.8</version>
-    </dependency>
     <dependency>
       <groupId>com.cognitect</groupId>
       <artifactId>transit-cljs</artifactId>
       <version>0.8.264</version>
     </dependency>
     <dependency>
-      <groupId>com.cognitect</groupId>
-      <artifactId>transit-clj</artifactId>
-      <version>1.0.324</version>
-    </dependency>
-    <dependency>
       <groupId>lambdaisland</groupId>
       <artifactId>glogi</artifactId>
-      <version>1.0.70</version>
+      <version>1.0.106</version>
+    </dependency>
+    <dependency>
+      <groupId>io.pedestal</groupId>
+      <artifactId>pedestal.log</artifactId>
+      <version>0.5.8</version>
     </dependency>
     <dependency>
       <groupId>org.java-websocket</groupId>
       <artifactId>Java-WebSocket</artifactId>
       <version>1.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cognitect</groupId>
+      <artifactId>transit-clj</artifactId>
+      <version>1.0.324</version>
     </dependency>
   </dependencies>
   <build>
@@ -64,12 +64,17 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
+        <version>3.2.0</version>
         <configuration>
           <archive>
             <manifestEntries>
-              <git-revision>bf38ee79249111b462f0e4d7a6aa4060fe25f542</git-revision>
+              <git-revision>7e790eca6d73426ecd4278c9ad17826c8ce32a05</git-revision>
             </manifestEntries>
           </archive>
         </configuration>
@@ -77,7 +82,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.5</version>
+        <version>1.6</version>
         <executions>
           <execution>
             <id>sign-artifacts</id>
