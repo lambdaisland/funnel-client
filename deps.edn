@@ -2,20 +2,20 @@
 
  :deps
  {;; cljs
-  com.cognitect/transit-cljs        {:mvn/version "0.8.264"}
-  lambdaisland/glogi                {:mvn/version "1.0.106"}
+  com.cognitect/transit-cljs        {:mvn/version "0.8.269"}
+  com.lambdaisland/glogi                {:mvn/version "1.0.116"}
 
   ;; clj
-  io.pedestal/pedestal.log          {:mvn/version "0.5.8"}
-  org.java-websocket/Java-WebSocket {:mvn/version "1.5.1"}
+  io.pedestal/pedestal.log          {:mvn/version "0.5.9"}
+  org.java-websocket/Java-WebSocket {:mvn/version "1.5.2"}
   com.cognitect/transit-clj         {:mvn/version "1.0.324"
                                      :exclusions  [org.msgpack/msgpack]}}
 
  :aliases
  {:dev
   {:extra-paths ["dev"]
-   :extra-deps  {org.clojure/clojurescript {:mvn/version "1.10.773"}}}
+   :extra-deps  {org.clojure/clojurescript {:mvn/version "1.10.866"}}}
 
   :test
   {:extra-paths ["test"]
-   :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.632"}}}}}
+   :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.861"}}}}}
