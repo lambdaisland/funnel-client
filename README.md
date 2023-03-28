@@ -32,13 +32,13 @@ You can find an overview of our projects at [lambdaisland/open-source](https://g
 To use the latest release, add the following to your `deps.edn` ([Clojure CLI](https://clojure.org/guides/deps_and_cli))
 
 ```
-com.lambdaisland/funnel-client {:mvn/version "0.0.18"}
+com.lambdaisland/funnel-client {:mvn/version "0.0.28"}
 ```
 
 or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
 
 ```
-[com.lambdaisland/funnel-client "0.0.18"]
+[com.lambdaisland/funnel-client "0.0.28"]
 ```
 <!-- /installation -->
 
