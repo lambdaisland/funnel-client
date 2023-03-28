@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.lambdaisland</groupId>
   <artifactId>funnel-client</artifactId>
-  <version>0.0.18</version>
+  <version>0.0.28</version>
   <name>funnel-client</name>
   <description>Clojure and ClojureScript client libraries for Funnel</description>
   <url>https://github.com/lambdaisland/funnel-client</url>
@@ -22,28 +22,28 @@
     <url>https://github.com/lambdaisland/funnel-client</url>
     <connection>scm:git:git://github.com/lambdaisland/funnel-client.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/lambdaisland/funnel-client.git</developerConnection>
-    <tag>7e790eca6d73426ecd4278c9ad17826c8ce32a05</tag>
+    <tag>18be71384395ad7490176ccda78d851203bce241</tag>
   </scm>
   <dependencies>
     <dependency>
       <groupId>com.cognitect</groupId>
       <artifactId>transit-cljs</artifactId>
-      <version>0.8.264</version>
+      <version>0.8.269</version>
     </dependency>
     <dependency>
-      <groupId>lambdaisland</groupId>
+      <groupId>com.lambdaisland</groupId>
       <artifactId>glogi</artifactId>
-      <version>1.0.106</version>
+      <version>1.0.116</version>
     </dependency>
     <dependency>
       <groupId>io.pedestal</groupId>
       <artifactId>pedestal.log</artifactId>
-      <version>0.5.8</version>
+      <version>0.5.9</version>
     </dependency>
     <dependency>
       <groupId>org.java-websocket</groupId>
       <artifactId>Java-WebSocket</artifactId>
-      <version>1.5.1</version>
+      <version>1.5.2</version>
     </dependency>
     <dependency>
       <groupId>com.cognitect</groupId>
@@ -74,7 +74,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <git-revision>7e790eca6d73426ecd4278c9ad17826c8ce32a05</git-revision>
+              <git-revision>18be71384395ad7490176ccda78d851203bce241</git-revision>
             </manifestEntries>
           </archive>
         </configuration>
