@@ -2,6 +2,10 @@
 
 ## Added
 
+- Support a new system property "lambdaisland.funnel-client.ssl-context" to 
+  specify a function name which when being called will inject the ssl context
+  into the funnel-client.
+
 ## Fixed
 
 ## Changed
